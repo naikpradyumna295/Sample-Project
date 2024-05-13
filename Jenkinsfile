@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'maven3.9.6'
-        jdk 'OpenJDK8'
+        jdk 'OpenJDK11'
     }
 
     stages {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deployment') {
             steps {
-                deploy adapters: [tomcat9(url: 'http://18.141.179.180:8080/', credentialsid: 'TomcatCreds')], war: 'target/*.war'
+                deploy adapters: [tomcat9(url: 'http://52.221.206.73:8080/', credentialsid: 'TomcatCreds')], war: 'target/*.war'
             }
         }
     }
