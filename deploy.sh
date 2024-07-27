@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Update this path to the actual webapps directory for Tomcat
-WEBAPPS_DIR="/java-web-app/src/main/webapp"
+WEBAPPS_DIR="/home/ubuntu/Java-Web-Apps/src/main/webapp"
+
   # Update this path
 
 # Ensure the directory exists
