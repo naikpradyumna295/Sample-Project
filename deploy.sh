@@ -3,8 +3,6 @@
 # Update this path to the actual webapps directory for Tomcat
 WEBAPPS_DIR="/home/ubuntu/Java-Web-Apps/src/main/webapp"
 
-  # Update this path
-
 # Ensure the directory exists
 if [ ! -d "$WEBAPPS_DIR" ]; then
   echo "Directory $WEBAPPS_DIR does not exist."
@@ -15,4 +13,4 @@ fi
 mv ~/deploy/*.war $WEBAPPS_DIR/
 
 # Restart the Tomcat service. Adjust 'tomcat' to the actual service name
-service tomcat restart  # Update 'tomcat' to your actual service name
+sudo service tomcat restart  # Update 'tomcat' to your actual service name
