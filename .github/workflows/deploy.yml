@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin'  # Use 'temurin' for JDK distributions
+        distribution: 'temurin'
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
@@ -40,7 +40,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'temurin'  # Use 'temurin' for JDK distributions
+        distribution: 'temurin'
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
@@ -55,5 +55,5 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'mkdir -p ~/deploy'
-        scp target/myapp.war $SERVER_USER@$SERVER_IP:~/deploy/
+        scp target/*.war $SERVER_USER@$SERVER_IP:~/deploy/
         ssh $SERVER_USER@$SERVER_IP 'bash ~/deploy/deploy.sh'
